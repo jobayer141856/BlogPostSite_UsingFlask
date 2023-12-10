@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Your Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="container mt-5">
+    <div class="container d-flex justify-content-center">
+        <h1>Edit Your Blog</h1>
+    </div>
+    <form  method = "post">
+        <div class="container mt-5">
+            <div class="mb-3">
+              <label for="blog_post_update" class="form-label">Title</label>
+              <input type= "text" class="form-control" id="blog_post_update" name= "title1" placeholder="Title" value="{{edblog[0]}}"></input>
+            </div>
+            <div class="mb-3">
+              <label for="blog_post_blog_update" class="form-label">Blog Details</label>
+              <textarea class="form-control" id="blog_post_blog_update" rows="5" name="blog2" placeholder="Blog Details" aria-valuemax="">{{edblog[1]}}</textarea>
+            </div>
+            <div class=" container d-flex justify-content-center mt-5">
+              <button class="btn btn-secondary mt-2" type="submit">Update</button>
+            </div>      
+        </div>
+    </form>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

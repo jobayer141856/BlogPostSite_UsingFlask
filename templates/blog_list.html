@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog List</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<body class="container mt-5">
+<h1 class="text-center m-5"> <i>Blog List</i></h1>
+<div class="container d-flex justify-content-center mt-5">
+    <table>
+        <form action="/blog_list" method="post">
+            {%if len_list == 0%}
+                <div>
+                <h3> Ooops..!! Sorry ...Currently here no blogs.</h3>
+                <br>
+                <h6>Please wait  few hours or few days.... Blogs are coming soon.....!!!!!!!!</h6>
+                </div>
+            {%else%}
+            {% for i in range(len_list)%}
+            <tr>
+                <td > <strong>Title:</strong> <button type="submit" name="id" value="{{blog_list[i][0]}}">{{blog_list[i][1]}}</button></td>
+<!--                <td><input type="submit" name="title" value="{{blog_list[i][1]}}"></input></td>-->
+                <td><Button  type="submit"><a class="text-decoration-none text-dark" href="/edit/{{title_id[i]}}">Edit</a></Button></td>
+                <td><Button  type="submit"><a class="text-decoration-none text-dark" href="/delete/{{title_id[i]}}">Delete</a></Button></td>
+            </tr>
+            {%endfor%}
+            {%endif%}
+        </form>
+    </table>
+</div>
+<div class="container d-flex justify-content-center m-5"></div>
+<div class="container d-flex justify-content-center m-5">
+    {% if is_post %}
+        {%if is_blog %}
+            <div class="container d-flex justify-content-center m-5 ">
+                <p> <b>Title:</b> {{blogs[0]}} <br> <b>Blog:</b> {{blogs[1]}}</p>
+                </div>
+        {%endif%}
+    {%endif%}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
